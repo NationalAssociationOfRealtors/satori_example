@@ -37,7 +37,13 @@ defmodule SatoriExample.Worker do
   end
 
   def handle_info(%PDU.Publish{channel: @publish_channel} = data, state) do
-    Logger.info "Subscription Data: #{inspect data}"
+    Logger.info "Publish Data: #{inspect data}"
+    {:noreply, state}
+  end
+
+  def handle_info(:publish, state) do
+    Satori.Publisher.publish(state.pub, %{key: "ieq.co2", value: 501.22, tags: %{node: 2}})
+    Process.send_after(self(), :publish, 5_000)
     {:noreply, state}
   end
 
@@ -47,5 +53,4 @@ defmodule SatoriExample.Worker do
   end
 
 end
-
 ```
