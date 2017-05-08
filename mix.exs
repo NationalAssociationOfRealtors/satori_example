@@ -29,6 +29,6 @@ defmodule SatoriExample.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [{:satori, github: "NationalAssociationofRealtors/satori"}]
+    [{:satori, "~> 0.1.0"}]
   end
 end
