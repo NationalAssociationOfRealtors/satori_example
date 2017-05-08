@@ -2,6 +2,8 @@
 # and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
 
+config :logger, level: :info
+
 config :satori,
   url: "wss://open-data.api.satori.com",
   app_key: System.get_env("SATORI_APP_KEY"),
