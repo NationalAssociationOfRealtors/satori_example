@@ -29,6 +29,6 @@ defmodule SatoriExample.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [{:satori, "~> 0.1.0"}]
+    [{:satori, "~> 0.2.1"}]
   end
 end
